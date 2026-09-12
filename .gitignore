@@ -1,0 +1,21 @@
+__pycache__/
+.venv/
+.idea/
+.ipynb_checkpoints/
+*.pyc
+*.pyo
+*.tmp
+*.temp
+*.bak
+*~
+.streamlit/
+
+# Keep the public repository lightweight and avoid publishing source data
+data/
+models/
+model/
+*.sav
+*.pkl
+*.joblib
+artifacts/*.joblib
+artifacts/*.sav
