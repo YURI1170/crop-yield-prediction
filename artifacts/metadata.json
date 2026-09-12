@@ -1,0 +1,60 @@
+{
+  "feature_columns": [
+    "Area",
+    "Item",
+    "Year",
+    "average_rain_fall_mm_per_year",
+    "avg_temp",
+    "pesticides_tonnes_log"
+  ],
+  "categorical_features": [
+    "Area",
+    "Item"
+  ],
+  "target": "hg/ha_yield",
+  "target_transform": "log(yield + target_offset)",
+  "target_offset": 50.0,
+  "random_state": 42,
+  "split": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "model": {
+    "type": "XGBRegressor",
+    "n_estimators": 26,
+    "max_depth": 9
+  },
+  "runtime": {
+    "xgboost": "3.4.1",
+    "scikit_learn": "1.7.2"
+  },
+  "rows_before_deduplication": 28242,
+  "rows_after_deduplication": 25932,
+  "metrics": {
+    "validation": {
+      "transformed_target": {
+        "mae": 0.11030014076083212,
+        "rmse": 0.18824673315212775,
+        "r2": 0.9707129991601328
+      },
+      "original_target": {
+        "mae": 6651.226103912588,
+        "rmse": 14634.73349352783,
+        "r2": 0.9714217709841209
+      }
+    },
+    "test": {
+      "transformed_target": {
+        "mae": 0.1153716672465455,
+        "rmse": 0.1944346852100904,
+        "r2": 0.9700536540426682
+      },
+      "original_target": {
+        "mae": 6707.994669544054,
+        "rmse": 14644.089292243278,
+        "r2": 0.9718876368195931
+      }
+    }
+  }
+}
